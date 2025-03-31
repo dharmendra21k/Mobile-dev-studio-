@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_projects"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="@string/menu_projects" />
+        <item
+            android:id="@+id/nav_editor"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/menu_editor" />
+        <item
+            android:id="@+id/nav_terminal"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="@string/menu_terminal" />
+        <item
+            android:id="@+id/nav_package_manager"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="@string/menu_package_manager" />
+        <item
+            android:id="@+id/nav_apk_builder"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/menu_apk_builder" />
+    </group>
+    
+    <item android:title="More">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="@string/menu_settings" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="@string/menu_help" />
+        </menu>
+    </item>
+</menu>

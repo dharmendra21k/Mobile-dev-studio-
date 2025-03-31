@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 33
+    
+    defaultConfig {
+        applicationId "com.mobiledev.androidstudio"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    
+    // Terminal emulation library
+    implementation 'com.github.termux:termux-app:v0.118.0'
+    
+    // Text editor components
+    implementation 'io.github.Rosemoe.sora-editor:editor:0.21.1'
+    implementation 'io.github.Rosemoe.sora-editor:language-java:0.21.1'
+    implementation 'io.github.Rosemoe.sora-editor:language-textmate:0.21.1'
+    
+    // File explorer and utilities
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+    implementation 'commons-io:commons-io:2.11.0'
+    
+    // For networking and downloading packages
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    
+    // For JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+    
+    // For local database
+    implementation 'androidx.room:room-runtime:2.5.2'
+    annotationProcessor 'androidx.room:room-compiler:2.5.2'
+    
+    // For background tasks
+    implementation 'androidx.work:work-runtime:2.8.1'
+    
+    // Testing dependencies
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}

@@ -1,0 +1,56 @@
+modules = ["java", "python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Android App Server"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "File Server"
+
+[[workflows.workflow]]
+name = "Android App Server"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd app && sh ../java.jar"
+
+[[workflows.workflow]]
+name = "File Server"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -m http.server 5000 --directory public"
+waitForPort = 5000
+
+[deployment]
+run = ["sh", "-c", "cd app && sh ../java.jar"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80

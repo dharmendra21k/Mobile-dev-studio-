@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Starting Mobile Developer Studio APK launcher..."
+echo "Mobile Developer Studio - A complete development environment for Android devices"
+echo
+echo "Features:"
+echo "- Terminal with pre-installed packages (Python, Node.js, Ruby, Java, PHP, etc.)"
+echo "- Package Manager for easy installation of additional tools"
+echo "- Code Editor with syntax highlighting and auto-completion"
+echo "- Project Manager with templates for Android, Flutter, React Native, and Web projects"
+echo "- APK Builder for creating Android applications directly on your device"
+echo
+echo "Created by Mobile Developer Studio Team"
+echo "Version 1.0.0"
